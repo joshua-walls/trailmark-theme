@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - "v*"
+      - "*"
   workflow_dispatch:
 
 permissions:
@@ -24,14 +24,13 @@ jobs:
 
           if [ "$GITHUB_REF_TYPE" = "tag" ]; then
             RELEASE_TAG="$GITHUB_REF_NAME"
-            TAG_VERSION="${RELEASE_TAG#v}"
 
-            if [ "$VERSION" != "$TAG_VERSION" ]; then
+            if [ "$VERSION" != "$RELEASE_TAG" ]; then
               echo "manifest.json version ($VERSION) must match tag ($RELEASE_TAG)."
               exit 1
             fi
           else
-            RELEASE_TAG="v${VERSION}"
+            RELEASE_TAG="$VERSION"
           fi
 
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"

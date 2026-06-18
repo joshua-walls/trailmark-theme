@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="900" viewBox="0 0 1320 900" role="img" aria-labelledby="title desc">
+  <title id="title">Trailmark Theme Palette Preview</title>
+  <desc id="desc">Light and dark color palette with H1-H6 + code block samples.</desc>
+  <defs>
+    <style>
+      .panel { font-family: Arial, Helvetica, sans-serif; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 20px; font-weight: 600; }
+      .label { font-size: 14px; fill: #334155; }
+      .small { font-size: 12px; fill: #475569; }
+      .swatch-label { font-size: 14px; font-weight: 600; }
+      .mono { font-family: "SFMono-Regular", Menlo, Monaco, Consolas, monospace; font-size: 14px; }
+      .code { rx: 8; }
+    </style>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1320" height="900" fill="url(#glow)"/>
+  <text x="40" y="44" class="title" fill="#0f172a">Trailmark Theme Palette Preview</text>
+  <text x="40" y="74" class="small" fill="#475569">Includes all heading levels (H1–H6) and code block in both light and dark sidebar contexts.</text>
+
+  <!-- Light panel -->
+  <g transform="translate(40 120)" class="panel">
+    <rect width="1200" height="330" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="24" y="36" class="subtitle" fill="#0f172a">Light mode</text>
+    <g transform="translate(24 72)">
+      <rect x="0" y="0" width="150" height="48" fill="#FFFFFF"/>
+      <text x="10" y="32" class="swatch-label">--trailmark-cloud</text>
+
+      <rect x="170" y="0" width="150" height="48" fill="#11232F"/>
+      <text x="180" y="32" fill="#ffffff" class="swatch-label">--trailmark-moonstone</text>
+
+      <rect x="340" y="0" width="150" height="48" fill="#FF5432"/>
+      <text x="350" y="32" fill="#1f2937" class="swatch-label">--trailmark-harvest-orange</text>
+
+      <rect x="510" y="0" width="170" height="48" fill="rgba(255,255,255,0.08)"/>
+      <text x="520" y="32" fill="#1f2937" class="swatch-label">--color-nav-hover-bg</text>
+
+      <rect x="700" y="0" width="170" height="48" fill="#FFFFFF"/>
+      <text x="710" y="32" fill="#11232F" class="swatch-label">--color-nav-active-bg</text>
+
+      <rect x="890" y="0" width="180" height="48" fill="#11232F"/>
+      <text x="900" y="32" fill="#ffffff" class="swatch-label">--color-nav-active-text</text>
+
+      <rect x="1080" y="0" width="96" height="48" fill="#FF5432"/>
+      <text x="1088" y="32" fill="#1f2937" class="swatch-label">active border</text>
+    </g>
+
+    <g transform="translate(34 160)">
+      <text x="0" y="0" class="label" fill="#334155">Heading samples</text>
+      <text x="0" y="38" class="title" style="font-size:44px; font-weight:700; fill:#0f172a;">H1 — Example heading</text>
+      <text x="0" y="82" style="font-size:34px; font-weight:700; fill:#111827;">H2 — Example heading</text>
+      <text x="0" y="118" style="font-size:26px; font-weight:700; fill:#1f2937;">H3 — Example heading</text>
+      <text x="0" y="148" style="font-size:22px; font-weight:700; fill:#374151;">H4 — Example heading</text>
+      <text x="0" y="174" style="font-size:18px; font-weight:700; fill:#4b5563;">H5 — Example heading</text>
+      <text x="0" y="196" style="font-size:16px; font-weight:700; fill:#6b7280;">H6 — Example heading</text>
+    </g>
+
+    <g transform="translate(34 320)">
+      <rect x="0" y="0" width="620" height="130" fill="#0f172a" rx="8"/>
+      <text x="14" y="28" fill="#e2e8f0" class="label">Code block</text>
+      <text x="14" y="56" class="mono" fill="#f8fafc">const trailmark = {</text>
+      <text x="14" y="78" class="mono" fill="#f8fafc">  mode: "light",</text>
+      <text x="14" y="100" class="mono" fill="#f8fafc">  cloud: "#FFFFFF",</text>
+      <text x="14" y="122" class="mono" fill="#f8fafc">};</text>
+    </g>
+  </g>
+
+  <!-- Dark panel -->
+  <g transform="translate(40 490)" class="panel">
+    <rect width="1200" height="330" fill="#111820" stroke="#1f2937"/>
+    <text x="24" y="36" class="subtitle" fill="#e2e8f0">Dark mode</text>
+    <g transform="translate(24 72)">
+      <rect x="0" y="0" width="150" height="48" fill="#243542"/>
+      <text x="10" y="32" fill="#cbd5e1" class="swatch-label">--color-nav-active-bg</text>
+
+      <rect x="170" y="0" width="150" height="48" fill="#FFFFFF"/>
+      <text x="180" y="32" fill="#111827" class="swatch-label">--trailmark-cloud</text>
+
+      <rect x="340" y="0" width="150" height="48" fill="#11232F"/>
+      <text x="350" y="32" fill="#ffffff" class="swatch-label">--trailmark-moonstone</text>
+
+      <rect x="510" y="0" width="170" height="48" fill="rgba(255,255,255,0.08)"/>
+      <text x="520" y="32" fill="#d1d5db" class="swatch-label">--color-nav-hover-bg</text>
+
+      <rect x="700" y="0" width="170" height="48" fill="#243542"/>
+      <text x="710" y="32" fill="#FFFFFF" class="swatch-label">active background</text>
+
+      <rect x="890" y="0" width="180" height="48" fill="#FFFFFF"/>
+      <text x="900" y="32" fill="#0f172a" class="swatch-label">--color-nav-active-text</text>
+
+      <rect x="1080" y="0" width="96" height="48" fill="#FF5432"/>
+      <text x="1088" y="32" fill="#0f172a" class="swatch-label">active border</text>
+    </g>
+
+    <g transform="translate(34 160)">
+      <text x="0" y="0" class="label" fill="#cbd5e1">Heading samples</text>
+      <text x="0" y="38" class="title" style="font-size:44px; font-weight:700; fill:#f8fafc;">H1 — Example heading</text>
+      <text x="0" y="82" style="font-size:34px; font-weight:700; fill:#e2e8f0;">H2 — Example heading</text>
+      <text x="0" y="118" style="font-size:26px; font-weight:700; fill:#d1d5db;">H3 — Example heading</text>
+      <text x="0" y="148" style="font-size:22px; font-weight:700; fill:#94a3b8;">H4 — Example heading</text>
+      <text x="0" y="174" style="font-size:18px; font-weight:700; fill:#94a3b8;">H5 — Example heading</text>
+      <text x="0" y="196" style="font-size:16px; font-weight:700; fill:#94a3b8;">H6 — Example heading</text>
+    </g>
+
+    <g transform="translate(34 320)">
+      <rect x="0" y="0" width="620" height="130" fill="#0f172a" stroke="#334155" rx="8"/>
+      <text x="14" y="28" fill="#cbd5e1" class="label">Code block</text>
+      <text x="14" y="56" class="mono" fill="#dbeafe">const trailmark = {</text>
+      <text x="14" y="78" class="mono" fill="#bfdbfe">  mode: "dark",</text>
+      <text x="14" y="100" class="mono" fill="#bfdbfe">  activeBg: "#243542",</text>
+      <text x="14" y="122" class="mono" fill="#bfdbfe">};</text>
+    </g>
+  </g>
+</svg>

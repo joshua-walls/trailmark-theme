@@ -21,16 +21,14 @@ Trailmark/
 
 ## Package a release
 
-Create a folder named `Trailmark` containing only `manifest.json` and `theme.css`, then zip that folder.
+Releases are packaged by GitHub Actions when a `v*` tag is pushed. The workflow creates a folder named `Trailmark` containing only `manifest.json` and `theme.css`, then uploads `Trailmark-<version>.zip` to the GitHub Release.
 
 ```sh
-mkdir -p dist/Trailmark
-cp manifest.json theme.css dist/Trailmark/
-cd dist
-zip -r Trailmark-0.1.0.zip Trailmark
+git tag v0.1.0
+git push origin v0.1.0
 ```
 
-Before publishing a release, confirm that the `version` field in `manifest.json` matches the zip filename and Git tag.
+Before publishing a release, confirm that the `version` field in `manifest.json` matches the Git tag without the leading `v`.
 
 ## Submit to Obsidian community themes
 

@@ -2470,20 +2470,26 @@ body[data-theme='dark'] {
 .theme-light .markdown-rendered h1,
 .theme-light .cm-header-1,
 .theme-light .cm-line.HyperMD-header-1,
-.theme-light .markdown-source-view.mod-cm6 .cm-header-1,
+.theme-light .markdown-source-view.mod-cm6 .cm-header-1 {
+  color: #C94A32;
+}
+
 .theme-light h2,
 .theme-light .markdown-preview-view h2,
 .theme-light .markdown-rendered h2,
 .theme-light .cm-header-2,
 .theme-light .cm-line.HyperMD-header-2,
-.theme-light .markdown-source-view.mod-cm6 .cm-header-2,
+.theme-light .markdown-source-view.mod-cm6 .cm-header-2 {
+  color: #167B78;
+}
+
 .theme-light h3,
 .theme-light .markdown-preview-view h3,
 .theme-light .markdown-rendered h3,
 .theme-light .cm-header-3,
 .theme-light .cm-line.HyperMD-header-3,
 .theme-light .markdown-source-view.mod-cm6 .cm-header-3 {
-  color: var(--trailmark-moonstone);
+  color: #416F82;
 }
 
 .theme-dark h1,
@@ -2492,7 +2498,7 @@ body[data-theme='dark'] {
 .theme-dark .cm-header-1,
 .theme-dark .cm-line.HyperMD-header-1,
 .theme-dark .markdown-source-view.mod-cm6 .cm-header-1 {
-  color: var(--trailmark-cloud);
+  color: #FF5432;
   border-left-color: var(--trailmark-harvest-orange);
 }
 
@@ -2501,44 +2507,59 @@ body[data-theme='dark'] {
 .theme-dark .markdown-rendered h2,
 .theme-dark .cm-header-2,
 .theme-dark .cm-line.HyperMD-header-2,
-.theme-dark .markdown-source-view.mod-cm6 .cm-header-2,
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-2 {
+  color: #6FF0E8;
+}
+
 .theme-dark h3,
 .theme-dark .markdown-preview-view h3,
 .theme-dark .markdown-rendered h3,
 .theme-dark .cm-header-3,
 .theme-dark .cm-line.HyperMD-header-3,
 .theme-dark .markdown-source-view.mod-cm6 .cm-header-3 {
-  color: var(--trailmark-fog);
+  color: #5F91A5;
 }
 
 .theme-light h4,
 .theme-light .markdown-preview-view h4,
 .theme-light .markdown-rendered h4,
-.theme-light .cm-header-4,
+.theme-light .cm-header-4 {
+  color: #D86147;
+}
+
 .theme-light h5,
 .theme-light .markdown-preview-view h5,
 .theme-light .markdown-rendered h5,
-.theme-light .cm-header-5,
+.theme-light .cm-header-5 {
+  color: #0E918C;
+}
+
 .theme-light h6,
 .theme-light .markdown-preview-view h6,
 .theme-light .markdown-rendered h6,
 .theme-light .cm-header-6 {
-  color: var(--trailmark-light-text-muted);
+  color: #526773;
 }
 
 .theme-dark h4,
 .theme-dark .markdown-preview-view h4,
 .theme-dark .markdown-rendered h4,
-.theme-dark .cm-header-4,
+.theme-dark .cm-header-4 {
+  color: #FF8A70;
+}
+
 .theme-dark h5,
 .theme-dark .markdown-preview-view h5,
 .theme-dark .markdown-rendered h5,
-.theme-dark .cm-header-5,
+.theme-dark .cm-header-5 {
+  color: #A8FFF8;
+}
+
 .theme-dark h6,
 .theme-dark .markdown-preview-view h6,
 .theme-dark .markdown-rendered h6,
 .theme-dark .cm-header-6 {
-  color: var(--trailmark-dark-text-muted);
+  color: #DCE6E9;
 }
 
 .theme-light .tree-item-self.nav-file-title.is-active,

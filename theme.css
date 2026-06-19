@@ -18,13 +18,13 @@
   --trailmark-light-border: #D7DEE3;
   --trailmark-light-text-muted: #5B6670;
 
-  --trailmark-dark-bg: #111820;
-  --trailmark-dark-bg-subtle: #17232C;
-  --trailmark-dark-surface: #1D2B36;
-  --trailmark-dark-surface-alt: #243542;
-  --trailmark-dark-border: #324654;
+  --trailmark-dark-bg: #071016;
+  --trailmark-dark-bg-subtle: #0B151C;
+  --trailmark-dark-surface: #12232D;
+  --trailmark-dark-surface-alt: #18313F;
+  --trailmark-dark-border: #294452;
   --trailmark-dark-text-muted: #B8C2C8;
-  --trailmark-dark-nav-bg: #0D1A23;
+  --trailmark-dark-nav-bg: #081119;
 
   --trailmark-font-stack: "Avenir", "Avenir Next", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -2600,4 +2600,307 @@ body[data-theme='dark'] {
 .theme-dark code:not(pre code),
 .theme-dark .cm-inline-code {
   color: var(--trailmark-seafoam);
+}
+
+/* Plugin support: Dataview and Forge */
+.theme-dark .block-language-dataview,
+.theme-dark .dataview,
+.theme-dark .dataview.table-view-table,
+.theme-dark .table-view-table {
+  --table-row-background-hover: #18313F;
+  color: var(--trailmark-fog);
+}
+
+.theme-light .block-language-dataview,
+.theme-light .dataview,
+.theme-light .dataview.table-view-table,
+.theme-light .table-view-table {
+  --table-row-background-hover: #EEF1F3;
+  color: var(--trailmark-black);
+}
+
+.theme-dark .dataview.table-view-table,
+.theme-dark .dataview.table-view-table th,
+.theme-dark .dataview.table-view-table td {
+  border-color: var(--trailmark-dark-border);
+}
+
+.theme-light .dataview.table-view-table,
+.theme-light .dataview.table-view-table th,
+.theme-light .dataview.table-view-table td {
+  border-color: var(--trailmark-light-border);
+}
+
+.theme-dark .dataview.table-view-table th {
+  background: var(--trailmark-dark-nav-bg);
+  color: #FF8A70;
+}
+
+.theme-light .dataview.table-view-table th {
+  background: var(--trailmark-moonstone);
+  color: var(--trailmark-cloud);
+}
+
+.theme-dark .dataview.table-view-table td {
+  background: var(--trailmark-dark-surface);
+}
+
+.theme-light .dataview.table-view-table td {
+  background: var(--trailmark-light-surface);
+}
+
+.theme-dark .dataview.table-view-table tr:nth-child(even) td {
+  background: var(--trailmark-dark-bg-subtle);
+}
+
+.theme-light .dataview.table-view-table tr:nth-child(even) td {
+  background: var(--trailmark-light-surface-alt);
+}
+
+.theme-dark .dataview.inline-field-key,
+.theme-dark .dataview.inline-field-value,
+.theme-dark .dataview.inline-field-standalone-value {
+  background: var(--trailmark-dark-surface-alt);
+  border-color: var(--trailmark-dark-border);
+  color: var(--trailmark-seafoam);
+}
+
+.theme-light .dataview.inline-field-key,
+.theme-light .dataview.inline-field-value,
+.theme-light .dataview.inline-field-standalone-value {
+  background: var(--trailmark-light-bg-subtle);
+  border-color: var(--trailmark-light-border);
+  color: var(--trailmark-moonstone);
+}
+
+.theme-dark div.dataview-error-box {
+  background: rgba(255, 84, 50, 0.1);
+  border-color: var(--trailmark-harvest-orange);
+}
+
+.theme-light div.dataview-error-box {
+  background: rgba(255, 84, 50, 0.07);
+  border-color: var(--trailmark-harvest-orange);
+}
+
+.theme-dark .forge-health-dashboard,
+.theme-dark .forge-modal .modal-content,
+.theme-dark .forge-ms-panel,
+.theme-dark .forge-restore-item,
+.theme-dark .forge-health-issue-group,
+.theme-dark .forge-health-issue,
+.theme-dark .forge-shape-fields {
+  background: var(--trailmark-dark-bg);
+  border-color: var(--trailmark-dark-border);
+  color: var(--trailmark-fog);
+}
+
+.theme-light .forge-health-dashboard,
+.theme-light .forge-modal .modal-content,
+.theme-light .forge-ms-panel,
+.theme-light .forge-restore-item,
+.theme-light .forge-health-issue-group,
+.theme-light .forge-health-issue,
+.theme-light .forge-shape-fields {
+  background: var(--trailmark-light-bg);
+  border-color: var(--trailmark-light-border);
+  color: var(--trailmark-black);
+}
+
+.theme-dark .forge-health-dashboard *,
+.theme-light .forge-health-dashboard * {
+  box-sizing: border-box;
+}
+
+.theme-dark .forge-health-header h1,
+.theme-dark .forge-health-header h2 {
+  color: #FF8A70;
+}
+
+.theme-light .forge-health-header h1,
+.theme-light .forge-health-header h2 {
+  color: var(--trailmark-harvest-orange);
+}
+
+.theme-dark .forge-health-section-header h2,
+.theme-dark .forge-health-section-header h3 {
+  color: #9DC8D4;
+}
+
+.theme-light .forge-health-section-header h2,
+.theme-light .forge-health-section-header h3 {
+  color: #416F82;
+}
+
+.theme-dark .forge-health-section-toggle,
+.theme-dark .forge-health-section-status,
+.theme-dark .forge-health-pill {
+  background: var(--trailmark-dark-bg-subtle);
+  border-color: var(--trailmark-dark-border);
+  color: var(--trailmark-dark-text-muted);
+}
+
+.theme-light .forge-health-section-toggle,
+.theme-light .forge-health-section-status,
+.theme-light .forge-health-pill {
+  background: var(--trailmark-light-surface);
+  border-color: var(--trailmark-light-border);
+  color: var(--trailmark-light-text-muted);
+}
+
+.theme-dark .forge-health-section-status.is-good,
+.theme-dark .forge-health-pill.is-good,
+.theme-dark .forge-count-changed,
+.theme-dark .forge-success-msg {
+  color: var(--trailmark-seafoam);
+}
+
+.theme-light .forge-health-section-status.is-good,
+.theme-light .forge-health-pill.is-good,
+.theme-light .forge-count-changed,
+.theme-light .forge-success-msg {
+  color: #167B78;
+}
+
+.theme-dark .forge-health-metric,
+.theme-dark .forge-field-order-item,
+.theme-dark .forge-tag-toggle,
+.theme-dark .forge-ms-trigger {
+  background: var(--trailmark-dark-surface);
+  border-color: var(--trailmark-dark-border);
+  color: var(--trailmark-fog);
+}
+
+.theme-light .forge-health-metric,
+.theme-light .forge-field-order-item,
+.theme-light .forge-tag-toggle,
+.theme-light .forge-ms-trigger {
+  background: var(--trailmark-light-surface);
+  border-color: var(--trailmark-light-border);
+  color: var(--trailmark-black);
+}
+
+.theme-dark .forge-health-metric :is(small, span, p),
+.theme-dark .forge-health-muted,
+.theme-dark .forge-health-meta {
+  color: var(--trailmark-dark-text-muted);
+}
+
+.theme-light .forge-health-metric :is(small, span, p),
+.theme-light .forge-health-muted,
+.theme-light .forge-health-meta {
+  color: var(--trailmark-light-text-muted);
+}
+
+.theme-dark .forge-tab-btn,
+.theme-dark .forge-health-dashboard button:not(.mod-cta) {
+  background: transparent;
+  border-color: transparent;
+  color: var(--trailmark-dark-text-muted);
+}
+
+.theme-light .forge-tab-btn,
+.theme-light .forge-health-dashboard button:not(.mod-cta) {
+  background: transparent;
+  border-color: transparent;
+  color: var(--trailmark-light-text-muted);
+}
+
+.theme-dark .forge-tab-btn:hover,
+.theme-dark .forge-health-dashboard button:not(.mod-cta):hover {
+  background: var(--trailmark-dark-surface-alt);
+  color: var(--trailmark-cloud);
+}
+
+.theme-light .forge-tab-btn:hover,
+.theme-light .forge-health-dashboard button:not(.mod-cta):hover {
+  background: var(--trailmark-light-bg-subtle);
+  color: var(--trailmark-moonstone);
+}
+
+.theme-dark .forge-tab-btn.is-active,
+.theme-dark .forge-tag-toggle.active,
+.theme-dark .forge-ms-box-checked {
+  background: var(--trailmark-harvest-orange);
+  border-color: var(--trailmark-harvest-orange);
+  color: var(--trailmark-cloud);
+}
+
+.theme-light .forge-tab-btn.is-active,
+.theme-light .forge-tag-toggle.active,
+.theme-light .forge-ms-box-checked {
+  background: var(--trailmark-harvest-orange);
+  border-color: var(--trailmark-harvest-orange);
+  color: var(--trailmark-cloud);
+}
+
+.theme-dark .forge-ms-chip,
+.theme-light .forge-ms-chip {
+  background: var(--background-modifier-hover);
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.theme-dark .forge-health-dashboard :is(table, thead, tbody, tr, th, td),
+.theme-light .forge-health-dashboard :is(table, thead, tbody, tr, th, td) {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .forge-health-dashboard :is(th, td),
+.theme-light .forge-health-dashboard :is(th, td) {
+  color: var(--text-normal);
+  font-weight: 500;
+}
+
+.theme-dark .forge-health-dashboard td:first-child,
+.theme-light .forge-health-dashboard td:first-child {
+  color: var(--text-normal);
+  font-weight: 650;
+}
+
+.theme-dark .forge-health-dashboard th {
+  background: var(--trailmark-dark-bg-subtle);
+  color: #FF8A70;
+}
+
+.theme-light .forge-health-dashboard th {
+  background: var(--trailmark-moonstone);
+  color: var(--trailmark-cloud);
+}
+
+.theme-dark .forge-health-dashboard td {
+  background: var(--trailmark-dark-surface);
+}
+
+.theme-light .forge-health-dashboard td {
+  background: var(--trailmark-light-surface);
+}
+
+.theme-dark .forge-health-dashboard tr:nth-child(even) td {
+  background: var(--trailmark-dark-bg-subtle);
+}
+
+.theme-light .forge-health-dashboard tr:nth-child(even) td {
+  background: var(--trailmark-light-surface-alt);
+}
+
+@media (max-width: 700px) {
+  .forge-health-dashboard {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .forge-health-dashboard :is(.forge-health-metrics, .forge-health-actions, .forge-health-section-actions) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .forge-health-dashboard :is(table, .forge-health-table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .forge-health-dashboard :is(.forge-health-metric, .forge-ms-trigger, .forge-field-order-item) {
+    min-width: 0;
+  }
 }

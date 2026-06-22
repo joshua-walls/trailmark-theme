@@ -1,0 +1,89 @@
+name: Release
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to publish manually"
+        required: true
+        type: string
+
+jobs:
+  release:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true &&
+       github.base_ref == 'main' &&
+       startsWith(github.head_ref, 'release/'))
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+
+    outputs:
+      tag: ${{ steps.release_ref.outputs.tag }}
+
+    steps:
+      - name: Resolve release ref
+        id: release_ref
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "tag=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+            echo "checkout_ref=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            BRANCH="${{ github.event.pull_request.head.ref }}"
+            VERSION="${BRANCH#release/}"
+            echo "tag=$VERSION" >> "$GITHUB_OUTPUT"
+            echo "checkout_ref=${{ github.event.pull_request.merge_commit_sha }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ steps.release_ref.outputs.checkout_ref }}
+
+      - name: Validate release version
+        run: |
+          VERSION="$(jq -r '.version' manifest.json)"
+          TAG="${{ steps.release_ref.outputs.tag }}"
+
+          if [[ "$VERSION" != "$TAG" ]]; then
+            echo "manifest.json version ($VERSION) must match release tag ($TAG)."
+            exit 1
+          fi
+
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Build install zip
+        run: |
+          rm -rf dist/Trailmark
+          mkdir -p dist/Trailmark
+          cp manifest.json theme.css dist/Trailmark/
+
+          (
+            cd dist
+            zip -qr "Trailmark-${VERSION}.zip" Trailmark
+          )
+
+      - name: Create and push tag
+        if: ${{ github.event_name != 'workflow_dispatch' }}
+        run: |
+          git tag "$VERSION"
+          git push origin "$VERSION"
+
+      - name: Attest install zip
+        uses: actions/attest@v4
+        with:
+          subject-path: dist/Trailmark-${{ steps.release_ref.outputs.tag }}.zip
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_ref.outputs.tag }}
+          body: Install zip for Trailmark ${{ steps.release_ref.outputs.tag }}.
+          files: dist/Trailmark-${{ steps.release_ref.outputs.tag }}.zip

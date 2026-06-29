@@ -2999,3 +2999,24 @@ body[data-theme='dark'] {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Keep Live Preview headings easy to edit: no rendered bars inside source mode. */
+.markdown-source-view.mod-cm6 :is(
+  .cm-line.HyperMD-header-1,
+  .cm-line.HyperMD-header-2,
+  .cm-line.HyperMD-header-3,
+  .cm-line.HyperMD-header-4,
+  .cm-line.HyperMD-header-5,
+  .cm-line.HyperMD-header-6,
+  .cm-header-1,
+  .cm-header-2,
+  .cm-header-3,
+  .cm-header-4,
+  .cm-header-5,
+  .cm-header-6
+) {
+  border-left: 0 !important;
+  padding-left: 0 !important;
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}

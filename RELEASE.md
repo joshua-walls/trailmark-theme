@@ -2,6 +2,13 @@
 
 This file is for maintainers.
 
+## Changelog
+
+### 0.1.7
+
+- Removed rendered heading bars and underline spacing from Live Preview/Edit mode headings so editing headings no longer gets extra left highlights.
+- Kept rendered Reading View heading styling unchanged.
+
 ## Local Build
 
 Local helper scripts may create a release zip in `dist/`, but they are not part of the repository. The install zip should contain a `Trailmark` folder with only `manifest.json` and `theme.css`.
@@ -13,10 +20,10 @@ Before building a local artifact, update `manifest.json` to the target version.
 Publishing follows the same release-branch flow as Forge and Lockblock.
 
 ```sh
-git switch -c release/0.1.6
+git switch -c release/0.1.7
 git add manifest.json theme.css RELEASE.md .github/workflows
-git commit -m "release: v0.1.6"
-git push -u origin release/0.1.6
+git commit -m "release: v0.1.7"
+git push -u origin release/0.1.7
 ```
 
 Open a PR from `release/<version>` into `main`. When that PR is merged, `.github/workflows/tag-release.yml` creates the matching tag, builds `Trailmark-<version>.zip`, attests it, and publishes the GitHub Release.

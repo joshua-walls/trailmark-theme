@@ -4,6 +4,10 @@ This file is for maintainers.
 
 ## Changelog
 
+### 0.1.9
+
+- Removed `!important` from Live Preview/source heading cleanup by increasing selector specificity.
+
 ### 0.1.8
 
 - Removed stale Forge Health dashboard table and mobile button overrides so Forge owns its responsive layout.
@@ -26,10 +30,10 @@ Before building a local artifact, update `manifest.json` to the target version.
 Publishing follows the same release-branch flow as Forge and Lockblock.
 
 ```sh
-git switch -c release/0.1.8
+git switch -c release/0.1.9
 git add manifest.json theme.css RELEASE.md .github/workflows
-git commit -m "release: v0.1.8"
-git push -u origin release/0.1.8
+git commit -m "release: v0.1.9"
+git push -u origin release/0.1.9
 ```
 
 Open a PR from `release/<version>` into `main`. When that PR is merged, `.github/workflows/tag-release.yml` creates the matching tag, builds `Trailmark-<version>.zip`, attests it, and publishes the GitHub Release.

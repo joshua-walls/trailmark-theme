@@ -309,11 +309,20 @@ em,
   color: var(--em-color);
 }
 
-blockquote,
-.cm-quote {
+blockquote {
   color: var(--text-normal);
   border-left: 4px solid var(--blockquote-border);
   padding-left: 0.9em;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-quote {
+  color: var(--text-normal);
+  border-left: 4px solid var(--blockquote-border);
+  padding-left: 0.9em;
+}
+
+.markdown-source-view.mod-cm6 .cm-quote {
+  color: var(--blockquote-border);
 }
 
 hr {
@@ -2748,6 +2757,53 @@ body[data-theme='dark'] {
   color: var(--trailmark-light-text-muted);
 }
 
+.theme-dark :is(.forge-health-section-status, .forge-health-pill)[data-status="good"],
+.theme-dark .forge-health-issue-group-count[data-severity="info"] {
+  background: rgba(111, 240, 232, 0.1);
+  border-color: rgba(111, 240, 232, 0.45);
+  color: var(--trailmark-seafoam);
+}
+
+.theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="good"],
+.theme-light .forge-health-issue-group-count[data-severity="info"] {
+  background: rgba(22, 123, 120, 0.08);
+  border-color: rgba(22, 123, 120, 0.34);
+  color: #167B78;
+}
+
+.theme-dark :is(.forge-health-section-status, .forge-health-pill)[data-status="warning"],
+.theme-dark .forge-health-issue-group-count[data-severity="warning"] {
+  background: rgba(255, 179, 106, 0.1);
+  border-color: rgba(255, 179, 106, 0.44);
+  color: #FFB36A;
+}
+
+.theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="warning"],
+.theme-light .forge-health-issue-group-count[data-severity="warning"] {
+  background: rgba(154, 90, 22, 0.08);
+  border-color: rgba(154, 90, 22, 0.34);
+  color: #9A5A16;
+}
+
+.theme-dark :is(.forge-health-section-status, .forge-health-pill)[data-status="critical"],
+.theme-dark .forge-health-issue-group-count[data-severity="critical"] {
+  background: rgba(255, 84, 50, 0.12);
+  border-color: rgba(255, 84, 50, 0.58);
+  color: #FF8A70;
+}
+
+.theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="critical"],
+.theme-light .forge-health-issue-group-count[data-severity="critical"] {
+  background: rgba(201, 74, 50, 0.09);
+  border-color: rgba(201, 74, 50, 0.42);
+  color: #C94A32;
+}
+
+.theme-dark :is(.forge-health-section-status, .forge-health-pill)[data-status="muted"],
+.theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="muted"] {
+  color: var(--text-muted);
+}
+
 .theme-dark .forge-health-section-status.is-good,
 .theme-dark .forge-health-pill.is-good,
 .theme-dark .forge-count-changed,
@@ -2792,28 +2848,67 @@ body[data-theme='dark'] {
   color: var(--trailmark-light-text-muted);
 }
 
-.theme-dark .forge-tab-btn,
-.theme-dark .forge-health-dashboard button:not(.mod-cta) {
+.theme-dark .forge-health-dashboard button.forge-health-action-button,
+.theme-dark .forge-health-dashboard .forge-health-issue-controls button {
+  background: var(--trailmark-dark-surface);
+  border: 1px solid var(--trailmark-dark-border);
+  color: var(--trailmark-fog);
+}
+
+.theme-light .forge-health-dashboard button.forge-health-action-button,
+.theme-light .forge-health-dashboard .forge-health-issue-controls button {
+  background: var(--trailmark-light-surface);
+  border: 1px solid var(--trailmark-light-border);
+  color: var(--trailmark-black);
+}
+
+.theme-dark .forge-health-dashboard button.forge-health-action-button:hover,
+.theme-dark .forge-health-dashboard .forge-health-issue-controls button:hover {
+  background: var(--trailmark-dark-surface-alt);
+  border-color: var(--trailmark-harvest-orange);
+  box-shadow: 0 0 0 2px rgba(255, 84, 50, 0.22);
+  color: var(--trailmark-cloud);
+}
+
+.theme-light .forge-health-dashboard button.forge-health-action-button:hover,
+.theme-light .forge-health-dashboard .forge-health-issue-controls button:hover {
+  background: var(--trailmark-light-bg-subtle);
+  border-color: var(--trailmark-harvest-orange);
+  box-shadow: 0 0 0 2px rgba(255, 84, 50, 0.16);
+  color: var(--trailmark-moonstone);
+}
+
+.theme-dark .forge-health-dashboard button.forge-health-action-button:focus-visible,
+.theme-dark .forge-health-dashboard .forge-health-issue-controls button:focus-visible,
+.theme-light .forge-health-dashboard button.forge-health-action-button:focus-visible,
+.theme-light .forge-health-dashboard .forge-health-issue-controls button:focus-visible {
+  border-color: var(--trailmark-harvest-orange);
+  box-shadow: 0 0 0 2px rgba(255, 84, 50, 0.28);
+}
+
+.theme-dark .forge-health-dashboard button.forge-health-action-primary,
+.theme-light .forge-health-dashboard button.forge-health-action-primary {
+  font-weight: 650;
+}
+
+.theme-dark .forge-tab-btn {
   background: transparent;
   border-color: transparent;
   color: var(--trailmark-dark-text-muted);
 }
 
-.theme-light .forge-tab-btn,
-.theme-light .forge-health-dashboard button:not(.mod-cta) {
+.theme-light .forge-tab-btn {
   background: transparent;
   border-color: transparent;
   color: var(--trailmark-light-text-muted);
 }
 
-.theme-dark .forge-tab-btn:hover,
-.theme-dark .forge-health-dashboard button:not(.mod-cta):hover {
+.theme-dark .forge-tab-btn:hover {
   background: var(--trailmark-dark-surface-alt);
   color: var(--trailmark-cloud);
 }
 
-.theme-light .forge-tab-btn:hover,
-.theme-light .forge-health-dashboard button:not(.mod-cta):hover {
+.theme-light .forge-tab-btn:hover {
   background: var(--trailmark-light-bg-subtle);
   color: var(--trailmark-moonstone);
 }
@@ -2839,165 +2934,6 @@ body[data-theme='dark'] {
   background: var(--background-modifier-hover);
   border: 1px solid var(--background-modifier-border);
   color: var(--text-normal);
-}
-
-.theme-dark .forge-health-dashboard :is(table, thead, tbody, tr, th, td),
-.theme-light .forge-health-dashboard :is(table, thead, tbody, tr, th, td) {
-  border-color: var(--background-modifier-border);
-}
-
-.theme-dark .forge-health-dashboard :is(th, td),
-.theme-light .forge-health-dashboard :is(th, td) {
-  color: var(--text-normal);
-  font-weight: 500;
-}
-
-.theme-dark .forge-health-dashboard td:first-child,
-.theme-light .forge-health-dashboard td:first-child {
-  color: var(--text-normal);
-  font-weight: 650;
-}
-
-.theme-dark .forge-health-dashboard th {
-  background: var(--trailmark-dark-bg-subtle);
-  color: #FF8A70;
-}
-
-.theme-light .forge-health-dashboard th {
-  background: var(--trailmark-moonstone);
-  color: var(--trailmark-cloud);
-}
-
-.theme-dark .forge-health-dashboard td {
-  background: var(--trailmark-dark-surface);
-}
-
-.theme-light .forge-health-dashboard td {
-  background: var(--trailmark-light-surface);
-}
-
-.theme-dark .forge-health-dashboard tr:nth-child(even) td {
-  background: var(--trailmark-dark-bg-subtle);
-}
-
-.theme-light .forge-health-dashboard tr:nth-child(even) td {
-  background: var(--trailmark-light-surface-alt);
-}
-
-@media (max-width: 700px) {
-  .forge-health-dashboard {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .forge-health-dashboard :is(.forge-health-metrics, .forge-health-actions, .forge-health-section-actions) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .forge-health-dashboard :is(table, .forge-health-table) {
-    display: block;
-    max-width: 100%;
-    overflow-x: auto;
-  }
-
-  .forge-health-dashboard :is(.forge-health-metric, .forge-ms-trigger, .forge-field-order-item) {
-    min-width: 0;
-  }
-}
-
-/* Forge mobile action buttons: keep controls recognizable instead of loose text labels. */
-.theme-dark .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row),
-.theme-light .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-
-.theme-dark .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) button:not(.mod-cta):not(.forge-tab-btn),
-.theme-dark .forge-health-dashboard button.forge-health-action:not(.mod-cta),
-.theme-dark .forge-health-dashboard button.forge-action:not(.mod-cta) {
-  min-height: 40px;
-  width: auto;
-  padding: 8px 14px;
-  border: 1px solid var(--trailmark-dark-border);
-  border-radius: 999px;
-  background: var(--trailmark-dark-surface);
-  color: var(--trailmark-fog);
-  font-weight: 650;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.theme-light .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) button:not(.mod-cta):not(.forge-tab-btn),
-.theme-light .forge-health-dashboard button.forge-health-action:not(.mod-cta),
-.theme-light .forge-health-dashboard button.forge-action:not(.mod-cta) {
-  min-height: 40px;
-  width: auto;
-  padding: 8px 14px;
-  border: 1px solid var(--trailmark-light-border);
-  border-radius: 999px;
-  background: var(--trailmark-light-surface);
-  color: var(--trailmark-black);
-  font-weight: 650;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.theme-dark .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) button:not(.mod-cta):not(.forge-tab-btn):hover,
-.theme-dark .forge-health-dashboard button.forge-health-action:not(.mod-cta):hover,
-.theme-dark .forge-health-dashboard button.forge-action:not(.mod-cta):hover {
-  background: var(--trailmark-dark-surface-alt);
-  color: var(--trailmark-cloud);
-}
-
-.theme-light .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) button:not(.mod-cta):not(.forge-tab-btn):hover,
-.theme-light .forge-health-dashboard button.forge-health-action:not(.mod-cta):hover,
-.theme-light .forge-health-dashboard button.forge-action:not(.mod-cta):hover {
-  background: var(--trailmark-light-bg-subtle);
-  color: var(--trailmark-moonstone);
-}
-
-@media (max-width: 700px) {
-  .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    align-items: stretch;
-  }
-
-  .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) button {
-    min-width: 0;
-    width: 100%;
-    white-space: normal;
-  }
-
-  .theme-dark .forge-health-dashboard button:not(.mod-cta):not(.forge-tab-btn):not(.forge-health-section-toggle),
-  .theme-light .forge-health-dashboard button:not(.mod-cta):not(.forge-tab-btn):not(.forge-health-section-toggle) {
-    min-height: 40px;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-weight: 650;
-    line-height: 1.2;
-  }
-
-  .theme-dark .forge-health-dashboard button:not(.mod-cta):not(.forge-tab-btn):not(.forge-health-section-toggle) {
-    background: var(--trailmark-dark-surface);
-    border: 1px solid var(--trailmark-dark-border);
-    color: var(--trailmark-fog);
-  }
-
-  .theme-light .forge-health-dashboard button:not(.mod-cta):not(.forge-tab-btn):not(.forge-health-section-toggle) {
-    background: var(--trailmark-light-surface);
-    border: 1px solid var(--trailmark-light-border);
-    color: var(--trailmark-black);
-  }
-}
-
-@media (max-width: 360px) {
-  .forge-health-dashboard :is(.forge-health-actions, .forge-health-section-actions, .forge-ms-actions, .forge-button-row) {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 /* Keep Live Preview headings easy to edit: no rendered bars inside source mode. */

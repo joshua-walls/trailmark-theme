@@ -2721,6 +2721,57 @@ body[data-theme='dark'] {
   box-sizing: border-box;
 }
 
+.theme-dark .forge-health-dashboard {
+  --forge-health-good: var(--trailmark-seafoam);
+  --forge-health-warning: #FFB36A;
+  --forge-health-critical: #FF8A70;
+  --forge-health-muted: var(--text-muted);
+}
+
+.theme-light .forge-health-dashboard {
+  --forge-health-good: #167B78;
+  --forge-health-warning: #9A5A16;
+  --forge-health-critical: #C94A32;
+  --forge-health-muted: var(--text-muted);
+}
+
+.theme-dark :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="good"],
+.theme-light :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="good"] {
+  --forge-health-status-color: var(--forge-health-good);
+}
+
+.theme-dark :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="warning"],
+.theme-light :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="warning"] {
+  --forge-health-status-color: var(--forge-health-warning);
+}
+
+.theme-dark :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="critical"],
+.theme-light :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="critical"] {
+  --forge-health-status-color: var(--forge-health-critical);
+}
+
+.theme-dark :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="muted"],
+.theme-light :is(.forge-health-header, .forge-health-section, .forge-health-section-header, .forge-health-section-header h2, .forge-health-section-header h3, .forge-health-section-status, .forge-health-pill)[data-status="muted"] {
+  --forge-health-status-color: var(--forge-health-muted);
+}
+
+.theme-dark .forge-health-section[data-status],
+.theme-light .forge-health-section[data-status] {
+  border-top: 1px solid color-mix(in srgb, var(--forge-health-status-color) 45%, transparent);
+}
+
+.theme-dark .forge-health-section[data-status] .forge-health-section-header,
+.theme-light .forge-health-section[data-status] .forge-health-section-header {
+  background: color-mix(in srgb, var(--forge-health-status-color) 8%, transparent);
+}
+
+.theme-dark :is(.forge-health-header h1, .forge-health-header h2, .forge-health-section-header h2, .forge-health-section-header h3)[data-status],
+.theme-dark :is(.forge-health-header, .forge-health-section-header)[data-status] :is(h1, h2, h3),
+.theme-light :is(.forge-health-header h1, .forge-health-header h2, .forge-health-section-header h2, .forge-health-section-header h3)[data-status],
+.theme-light :is(.forge-health-header, .forge-health-section-header)[data-status] :is(h1, h2, h3) {
+  color: var(--forge-health-status-color);
+}
+
 .theme-dark .forge-health-header h1,
 .theme-dark .forge-health-header h2 {
   color: #FF8A70;
@@ -2761,47 +2812,47 @@ body[data-theme='dark'] {
 .theme-dark .forge-health-issue-group-count[data-severity="info"] {
   background: rgba(111, 240, 232, 0.1);
   border-color: rgba(111, 240, 232, 0.45);
-  color: var(--trailmark-seafoam);
+  color: var(--forge-health-status-color, var(--trailmark-seafoam));
 }
 
 .theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="good"],
 .theme-light .forge-health-issue-group-count[data-severity="info"] {
   background: rgba(22, 123, 120, 0.08);
   border-color: rgba(22, 123, 120, 0.34);
-  color: #167B78;
+  color: var(--forge-health-status-color, #167B78);
 }
 
 .theme-dark :is(.forge-health-section-status, .forge-health-pill)[data-status="warning"],
 .theme-dark .forge-health-issue-group-count[data-severity="warning"] {
   background: rgba(255, 179, 106, 0.1);
   border-color: rgba(255, 179, 106, 0.44);
-  color: #FFB36A;
+  color: var(--forge-health-status-color, #FFB36A);
 }
 
 .theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="warning"],
 .theme-light .forge-health-issue-group-count[data-severity="warning"] {
   background: rgba(154, 90, 22, 0.08);
   border-color: rgba(154, 90, 22, 0.34);
-  color: #9A5A16;
+  color: var(--forge-health-status-color, #9A5A16);
 }
 
 .theme-dark :is(.forge-health-section-status, .forge-health-pill)[data-status="critical"],
 .theme-dark .forge-health-issue-group-count[data-severity="critical"] {
   background: rgba(255, 84, 50, 0.12);
   border-color: rgba(255, 84, 50, 0.58);
-  color: #FF8A70;
+  color: var(--forge-health-status-color, #FF8A70);
 }
 
 .theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="critical"],
 .theme-light .forge-health-issue-group-count[data-severity="critical"] {
   background: rgba(201, 74, 50, 0.09);
   border-color: rgba(201, 74, 50, 0.42);
-  color: #C94A32;
+  color: var(--forge-health-status-color, #C94A32);
 }
 
 .theme-dark :is(.forge-health-section-status, .forge-health-pill)[data-status="muted"],
 .theme-light :is(.forge-health-section-status, .forge-health-pill)[data-status="muted"] {
-  color: var(--text-muted);
+  color: var(--forge-health-status-color, var(--text-muted));
 }
 
 .theme-dark .forge-health-section-status.is-good,
@@ -3082,24 +3133,11 @@ body[data-theme='dark'] {
   box-shadow: none;
 }
 
-.theme-dark .vertical-tab-content > div:has(> .setting-item-heading) {
-  background: transparent !important;
-  border-radius: 0;
-  margin-top: 34px;
-  padding: 0;
-}
-
 .theme-dark .vertical-tab-content .setting-item-heading {
   position: relative;
   z-index: 1;
-  margin: 0 0 14px;
+  margin: 34px 0 14px;
   padding: 0;
-}
-
-.theme-dark .vertical-tab-content > div:has(> .setting-item-heading) > div:not(.setting-item-heading) {
-  background: #071923;
-  border-radius: 28px;
-  padding: 24px 28px;
 }
 
 .theme-dark .vertical-tab-content .setting-item,
@@ -3200,22 +3238,28 @@ body[data-theme='dark'] {
   border-bottom-color: rgba(111, 240, 232, 0.38);
 }
 
-.theme-dark .graph-view.color-line,
-.theme-dark .graph-view.color-arrow {
-  color: #132630 !important;
+.theme-dark .workspace-leaf-content[data-type='graph'] .graph-view.color-line,
+.theme-dark .workspace-leaf-content[data-type='graph'] .graph-view.color-arrow,
+.theme-dark .workspace-leaf-content[data-type='localgraph'] .graph-view.color-line,
+.theme-dark .workspace-leaf-content[data-type='localgraph'] .graph-view.color-arrow {
+  color: #132630;
 }
 
-.theme-dark .graph-view.color-fill,
-.theme-dark .graph-view.color-circle {
-  color: #245D63 !important;
+.theme-dark .workspace-leaf-content[data-type='graph'] .graph-view.color-fill,
+.theme-dark .workspace-leaf-content[data-type='graph'] .graph-view.color-circle,
+.theme-dark .workspace-leaf-content[data-type='localgraph'] .graph-view.color-fill,
+.theme-dark .workspace-leaf-content[data-type='localgraph'] .graph-view.color-circle {
+  color: #245D63;
 }
 
-.theme-dark .graph-view.color-fill-tag {
-  color: #4B7888 !important;
+.theme-dark .workspace-leaf-content[data-type='graph'] .graph-view.color-fill-tag,
+.theme-dark .workspace-leaf-content[data-type='localgraph'] .graph-view.color-fill-tag {
+  color: #4B7888;
 }
 
-.theme-dark .graph-view.color-fill-attachment {
-  color: #4F6470 !important;
+.theme-dark .workspace-leaf-content[data-type='graph'] .graph-view.color-fill-attachment,
+.theme-dark .workspace-leaf-content[data-type='localgraph'] .graph-view.color-fill-attachment {
+  color: #4F6470;
 }
 
 .theme-dark .metadata-properties {

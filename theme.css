@@ -2970,3 +2970,258 @@ body[data-theme='dark'] {
   border-bottom: 0;
   padding-bottom: 0;
 }
+
+/* Trail edge pass: utilitarian settings, folder depth, graph contrast. */
+.theme-dark .modal.mod-settings .setting-item,
+.theme-dark .vertical-tab-content .setting-item,
+.theme-dark .community-modal .setting-item {
+  background: transparent;
+  border-color: rgba(41, 68, 82, 0.72);
+  box-shadow: none;
+}
+
+.theme-dark .modal.mod-settings .setting-item-heading,
+.theme-dark .vertical-tab-content .setting-item-heading,
+.theme-dark .modal.mod-settings h1,
+.theme-dark .modal.mod-settings h2,
+.theme-dark .vertical-tab-content h1,
+.theme-dark .vertical-tab-content h2 {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding-bottom: 0;
+}
+
+.theme-dark .modal.mod-settings .setting-item-control,
+.theme-dark .vertical-tab-content .setting-item-control {
+  background: transparent;
+}
+
+.theme-dark .modal.mod-settings .setting-item-control button.mod-cta,
+.theme-dark .vertical-tab-content .setting-item-control button.mod-cta {
+  background: var(--trailmark-harvest-orange);
+  border-color: var(--trailmark-harvest-orange);
+  color: var(--trailmark-cloud);
+}
+
+.theme-dark .modal.mod-settings,
+.theme-dark .modal.mod-settings .modal-content,
+.theme-dark .modal.mod-settings .vertical-tab-content,
+.theme-dark .modal.mod-settings .vertical-tab-content-container,
+.theme-dark .modal.mod-settings .settings-container {
+  background: #02070B;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-content > div:not(.setting-item):not(.setting-item-heading) {
+  background: #071923;
+  border: 0;
+  border-radius: 28px;
+  box-shadow: none;
+}
+
+.theme-dark .modal.mod-settings .setting-item,
+.theme-dark .modal.mod-settings .setting-item.mod-toggle,
+.theme-dark .modal.mod-settings .setting-item:not(.setting-item-heading) {
+  border: 0;
+  border-bottom: 0;
+}
+
+.theme-dark .modal.mod-settings .setting-item:hover {
+  background: transparent;
+}
+
+.theme-dark .modal.mod-settings select,
+.theme-dark .modal.mod-settings .dropdown,
+.theme-dark .modal.mod-settings input,
+.theme-dark .modal.mod-settings textarea,
+.theme-dark .modal.mod-settings button:not(.mod-warning),
+.theme-dark .modal.mod-settings .setting-item-control button,
+.theme-dark .modal.mod-settings .clickable-icon {
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.theme-dark .modal.mod-settings select,
+.theme-dark .modal.mod-settings .dropdown,
+.theme-dark .modal.mod-settings input,
+.theme-dark .modal.mod-settings textarea,
+.theme-dark .modal.mod-settings button:not(.mod-cta):not(.mod-warning) {
+  background: #03101A;
+  border-color: #102C38;
+  color: #DCE6E9;
+}
+
+.theme-dark .modal.mod-settings button.mod-cta,
+.theme-dark .modal.mod-settings .mod-cta,
+.theme-dark .modal.mod-settings .checkbox-container.is-enabled {
+  background-color: var(--trailmark-harvest-orange);
+  border-color: var(--trailmark-harvest-orange);
+  color: var(--trailmark-cloud);
+}
+
+.theme-dark .modal.mod-settings .checkbox-container {
+  background-color: #12333D;
+  border-color: #102C38;
+  border-radius: 999px;
+}
+
+.theme-dark .modal.mod-settings .setting-item-heading {
+  color: #DCE6E9;
+  margin-top: 18px;
+  border-bottom: 0;
+}
+
+.theme-dark .vertical-tab-content,
+.theme-dark .vertical-tab-content-container,
+.theme-dark .settings-container {
+  box-shadow: none;
+}
+
+.theme-dark .vertical-tab-content > div:not(.setting-item):not(.setting-item-heading) {
+  border: 0;
+  box-shadow: none;
+}
+
+.theme-dark .vertical-tab-content > div:has(> .setting-item-heading) {
+  background: transparent !important;
+  border-radius: 0;
+  margin-top: 34px;
+  padding: 0;
+}
+
+.theme-dark .vertical-tab-content .setting-item-heading {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.theme-dark .vertical-tab-content > div:has(> .setting-item-heading) > div:not(.setting-item-heading) {
+  background: #071923;
+  border-radius: 28px;
+  padding: 24px 28px;
+}
+
+.theme-dark .vertical-tab-content .setting-item,
+.theme-dark .vertical-tab-content .setting-item.mod-toggle,
+.theme-dark .vertical-tab-content .setting-item:not(.setting-item-heading) {
+  border: 0;
+  border-bottom: 0;
+}
+
+.theme-dark .vertical-tab-content select,
+.theme-dark .vertical-tab-content .dropdown,
+.theme-dark .vertical-tab-content input,
+.theme-dark .vertical-tab-content textarea,
+.theme-dark .vertical-tab-content button:not(.mod-warning),
+.theme-dark .vertical-tab-content .setting-item-control button,
+.theme-dark .vertical-tab-content .clickable-icon,
+.theme-dark .vertical-tab-content .checkbox-container {
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.theme-dark .nav-files-container {
+  --trailmark-folder-depth-color: #FF8A70;
+}
+
+.theme-dark .nav-files-container .nav-folder-title,
+.theme-dark .nav-files-container .nav-folder-title .tree-item-inner,
+.theme-dark .nav-files-container .nav-folder-title .nav-folder-title-content,
+.theme-dark .nav-files-container .nav-folder-title .collapse-icon {
+  color: var(--trailmark-folder-depth-color);
+}
+
+.theme-dark .nav-files-container .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children {
+  --trailmark-folder-depth-color: #6FF0E8;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: rgba(255, 138, 112, 0.34);
+}
+
+.theme-dark .nav-files-container .nav-folder-children .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children .tree-item-children {
+  --trailmark-folder-depth-color: #5F91A5;
+  border-left-color: rgba(111, 240, 232, 0.30);
+}
+
+.theme-dark .nav-files-container .nav-folder-children .nav-folder-children .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children .tree-item-children .tree-item-children {
+  --trailmark-folder-depth-color: #FF5432;
+  border-left-color: rgba(95, 145, 165, 0.32);
+}
+
+.theme-dark .nav-files-container .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children .tree-item-children .tree-item-children .tree-item-children {
+  --trailmark-folder-depth-color: #A8FFF8;
+  border-left-color: rgba(255, 84, 50, 0.30);
+}
+
+.theme-dark .nav-files-container .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children {
+  --trailmark-folder-depth-color: #9DAEB6;
+  border-left-color: rgba(168, 255, 248, 0.28);
+}
+
+.theme-dark .nav-files-container .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children {
+  --trailmark-folder-depth-color: #FF8A70;
+  border-left-color: rgba(157, 174, 182, 0.30);
+}
+
+.theme-dark .nav-files-container .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children {
+  --trailmark-folder-depth-color: #6FF0E8;
+  border-left-color: rgba(255, 138, 112, 0.34);
+}
+
+.theme-dark .nav-files-container .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children .nav-folder-children,
+.theme-dark .nav-files-container .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children .tree-item-children {
+  --trailmark-folder-depth-color: #5F91A5;
+  border-left-color: rgba(111, 240, 232, 0.30);
+}
+
+.theme-dark .nav-files-container .nav-file-title,
+.theme-dark .nav-files-container .tree-item-self.nav-file-title,
+.theme-dark .nav-files-container .nav-file-title .nav-file-title-content,
+.theme-dark .nav-files-container .tree-item-self.nav-file-title .tree-item-inner {
+  color: #C4D0D5;
+}
+
+.theme-dark .workspace-leaf.mod-active {
+  box-shadow:
+    inset 2px 0 0 var(--trailmark-seafoam),
+    inset 0 1px 0 rgba(111, 240, 232, 0.32),
+    inset 0 0 0 1px rgba(41, 68, 82, 0.58);
+}
+
+.theme-dark .workspace-leaf.mod-active .view-header {
+  border-bottom-color: rgba(111, 240, 232, 0.38);
+}
+
+.theme-dark .graph-view.color-line,
+.theme-dark .graph-view.color-arrow {
+  color: #132630 !important;
+}
+
+.theme-dark .graph-view.color-fill,
+.theme-dark .graph-view.color-circle {
+  color: #245D63 !important;
+}
+
+.theme-dark .graph-view.color-fill-tag {
+  color: #4B7888 !important;
+}
+
+.theme-dark .graph-view.color-fill-attachment {
+  color: #4F6470 !important;
+}
+
+.theme-dark .metadata-properties {
+  background: #08141D;
+  border-color: #263A45;
+  box-shadow:
+    inset 0 1px 0 rgba(245, 247, 248, 0.025),
+    0 0 0 1px rgba(5, 8, 12, 0.72);
+}

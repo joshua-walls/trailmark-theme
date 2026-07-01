@@ -4,6 +4,11 @@ This file is for maintainers.
 
 ## Changelog
 
+### 0.1.11
+
+- Added Forge Health `data-status` hooks so headings, status badges, section header tint, and section borders follow good, warning, critical, and muted states.
+- Removed CSS lint warnings by replacing broad `:has()` settings selectors and `!important` graph overrides with safer scoped selectors.
+
 ### 0.1.10
 
 - Ported Night Ridge-style settings, folder depth, graph, and metadata refinements into Trailmark while preserving Trailmark colors and pill controls.

@@ -4,6 +4,12 @@ This file is for maintainers.
 
 ## Changelog
 
+### 0.1.10
+
+- Ported Night Ridge-style settings, folder depth, graph, and metadata refinements into Trailmark while preserving Trailmark colors and pill controls.
+- Added cyclic folder depth coloring and visible depth rails for deep folder trees.
+- Fixed mobile settings section spacing so headings sit outside their settings panels.
+
 ### 0.1.9
 
 - Removed `!important` from Live Preview/source heading cleanup by increasing selector specificity.
@@ -30,10 +36,10 @@ Before building a local artifact, update `manifest.json` to the target version.
 Publishing follows the same release-branch flow as Forge and Lockblock.
 
 ```sh
-git switch -c release/0.1.9
+git switch -c release/0.1.10
 git add manifest.json theme.css RELEASE.md .github/workflows
-git commit -m "release: v0.1.9"
-git push -u origin release/0.1.9
+git commit -m "release: v0.1.10"
+git push -u origin release/0.1.10
 ```
 
 Open a PR from `release/<version>` into `main`. When that PR is merged, `.github/workflows/tag-release.yml` creates the matching tag, builds `Trailmark-<version>.zip`, attests it, and publishes the GitHub Release.
